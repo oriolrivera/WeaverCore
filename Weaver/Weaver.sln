@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{61DB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weaver.Web", "Weaver.Web\Weaver.Web.csproj", "{3854FE77-B8BA-4826-B64D-85E2BAAD3D37}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weaver.Common", "..\Weaver.Common\Weaver.Common.csproj", "{924C634C-6210-495D-8AC6-D3A2541C74CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{3854FE77-B8BA-4826-B64D-85E2BAAD3D37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3854FE77-B8BA-4826-B64D-85E2BAAD3D37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3854FE77-B8BA-4826-B64D-85E2BAAD3D37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{924C634C-6210-495D-8AC6-D3A2541C74CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{924C634C-6210-495D-8AC6-D3A2541C74CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{924C634C-6210-495D-8AC6-D3A2541C74CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{924C634C-6210-495D-8AC6-D3A2541C74CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
