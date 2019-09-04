@@ -5,9 +5,15 @@ VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{61DB8A87-AF5B-4CAF-9717-0B1F58B3BFD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weaver.Web", "Weaver.Web\Weaver.Web.csproj", "{3854FE77-B8BA-4826-B64D-85E2BAAD3D37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weaver.Web", "Weaver.Web\Weaver.Web.csproj", "{3854FE77-B8BA-4826-B64D-85E2BAAD3D37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weaver.Common", "..\Weaver.Common\Weaver.Common.csproj", "{924C634C-6210-495D-8AC6-D3A2541C74CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weaver.Common", "..\Weaver.Common\Weaver.Common.csproj", "{924C634C-6210-495D-8AC6-D3A2541C74CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{2678A70F-9373-47BF-A565-AD0C6CD375C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MVVMCross", "MVVMCross", "{D9B76E49-CA76-425C-86E6-68543F6654B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product.UICross.droid", "Product.UICross.droid\Product.UICross.droid.csproj", "{DEAC2F48-54A6-47A0-89D6-16013CAA2895}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,12 +29,20 @@ Global
 		{924C634C-6210-495D-8AC6-D3A2541C74CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{924C634C-6210-495D-8AC6-D3A2541C74CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{924C634C-6210-495D-8AC6-D3A2541C74CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEAC2F48-54A6-47A0-89D6-16013CAA2895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEAC2F48-54A6-47A0-89D6-16013CAA2895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEAC2F48-54A6-47A0-89D6-16013CAA2895}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DEAC2F48-54A6-47A0-89D6-16013CAA2895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEAC2F48-54A6-47A0-89D6-16013CAA2895}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEAC2F48-54A6-47A0-89D6-16013CAA2895}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3854FE77-B8BA-4826-B64D-85E2BAAD3D37} = {61DB8A87-AF5B-4CAF-9717-0B1F58B3BFD4}
+		{D9B76E49-CA76-425C-86E6-68543F6654B8} = {2678A70F-9373-47BF-A565-AD0C6CD375C2}
+		{DEAC2F48-54A6-47A0-89D6-16013CAA2895} = {D9B76E49-CA76-425C-86E6-68543F6654B8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {07586C32-043F-4759-8ACC-544855961F78}
