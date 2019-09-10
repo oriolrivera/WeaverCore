@@ -46,5 +46,35 @@
             var newProduct = await this.productRepository.CreateAsync(entityProduct);
             return Ok(newProduct);
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutProduct([FromRoute] int id, [FromBody] Common.Models.Product product)
+        {
+            if (!ModelState.IsValid)
+            {
+                return this.BadRequest(ModelState);
+            }
+
+            if (id != product.Id)
+            {
+                return BadRequest();
+            }
+
+            var oldProduct = await this.productRepository.GetByIdAsync(id);
+            if (oldProduct == null)
+            {
+                return this.BadRequest("Product Id don't exists.");
+            }
+
+            oldProduct.IsAvailabe = product.IsAvailabe;
+            oldProduct.LastPurchase = product.LastPurchase;
+            oldProduct.LastSale = product.LastSale;
+            oldProduct.Name = product.Name;
+            oldProduct.Price = product.Price;
+            oldProduct.Stock = product.Stock;
+
+            var updatedProduct = await this.productRepository.UpdateAsync(oldProduct);
+            return Ok(updatedProduct);
+        }
     }
 }
