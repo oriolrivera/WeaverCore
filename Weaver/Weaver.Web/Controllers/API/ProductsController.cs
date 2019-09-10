@@ -76,5 +76,23 @@
             var updatedProduct = await this.productRepository.UpdateAsync(oldProduct);
             return Ok(updatedProduct);
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteProduct([FromRoute] int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return this.BadRequest(ModelState);
+            }
+
+            var product = await this.productRepository.GetByIdAsync(id);
+            if (product == null)
+            {
+                return this.NotFound();
+            }
+
+            await this.productRepository.DeleteAsync(product);
+            return Ok(product);
+        }
     }
 }
