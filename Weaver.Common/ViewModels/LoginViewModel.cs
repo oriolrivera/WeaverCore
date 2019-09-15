@@ -5,6 +5,8 @@
     using Models;
     using MvvmCross.Commands;
     using MvvmCross.ViewModels;
+    using Common.Services;
+    using MvvmCross.Navigation;
 
     public class LoginViewModel : MvxViewModel
     {
@@ -13,6 +15,7 @@
         private MvxCommand loginCommand;
         private readonly IDialogService dialogService;
         private bool isLoading;
+        private readonly IMvxNavigationService navigationService;
 
         public bool IsLoading
         {
@@ -42,15 +45,18 @@
         }
 
         public LoginViewModel(
-            IDialogService dialogService)
+            IApiService apiService,
+            IDialogService dialogService,
+            IMvxNavigationService navigationService)
         {
             this.dialogService = dialogService;
+            this.navigationService = navigationService;
             this.IsLoading = false;
         }
 
-        private void DoLoginCommand()
+        private async void DoLoginCommand()
         {
-            if (string.IsNullOrEmpty(this.Email))
+            /*if (string.IsNullOrEmpty(this.Email))
             {
                 this.dialogService.Alert("Error", "You must enter an email.", "Accept");
                 return;
@@ -60,12 +66,13 @@
             {
                 this.dialogService.Alert("Error", "You must enter a password.", "Accept");
                 return;
-            }
+            }  */
 
-            this.IsLoading = true;           
-
+            this.IsLoading = true;          
+            // TODO: request login
             this.IsLoading = false;
-            this.dialogService.Alert("Ok", "Fuck yeah!", "Accept");
+           // this.dialogService.Alert("Ok", "Fuck yeah!", "Accept");
+            await this.navigationService.Navigate<ProductsViewModel>();
         }
     }
 }
