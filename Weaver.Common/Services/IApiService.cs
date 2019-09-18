@@ -6,5 +6,7 @@
     public interface IApiService
     {
         Task<Response> GetListAsync<T>(string path);
+
+        Task<Response> PostAsync<T>(string path, T model);
     }
 }

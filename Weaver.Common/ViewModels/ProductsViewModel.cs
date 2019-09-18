@@ -9,25 +9,44 @@
     using Services;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Windows.Input;
 
     public class ProductsViewModel : MvxViewModel
     {
         private List<Product> products;
         private readonly IApiService apiService;
         private readonly IDialogService dialogService;
+        private readonly IMvxNavigationService navigationService;
+        private MvxCommand addProductCommand;
 
         public ProductsViewModel(
             IApiService apiService,
-            IDialogService dialogService)
+            IDialogService dialogService,
+            IMvxNavigationService navigationService)
         {
             this.apiService = apiService;
             this.dialogService = dialogService;
+            this.navigationService = navigationService;
         }
 
         public List<Product> Products
         {
             get => this.products;
             set => this.SetProperty(ref this.products, value);
+        }
+
+        public ICommand AddProductCommand
+        {
+            get
+            {
+                this.addProductCommand = this.addProductCommand ?? new MvxCommand(this.AddProduct);
+                return this.addProductCommand;
+            }
+        }
+
+        private async void AddProduct()
+        {
+            await this.navigationService.Navigate<AddProductViewModel>();
         }
 
         public override void ViewAppeared()
