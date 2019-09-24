@@ -66,6 +66,7 @@
     <Compile Include="Setup.cs" />
     <Compile Include="Views\AddProductView.cs" />
     <Compile Include="Views\LoginView.cs" />
+    <Compile Include="Views\ProductDetailView.cs" />
     <Compile Include="Views\ProductsView.cs" />
     <Compile Include="Views\SplashView.cs" />
   </ItemGroup>
@@ -181,6 +182,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\AddProductPage.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ProductDetailPage.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

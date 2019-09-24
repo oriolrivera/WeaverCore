@@ -6791,6 +6791,9 @@ namespace Product.UICross.droid
 			// aapt resource value: 0x7f09003f
 			public const int bottom = 2131296319;
 			
+			// aapt resource value: 0x7f0900bc
+			public const int buttonContainer = 2131296444;
+			
 			// aapt resource value: 0x7f090072
 			public const int buttonPanel = 2131296370;
 			
@@ -6844,6 +6847,9 @@ namespace Product.UICross.droid
 			
 			// aapt resource value: 0x7f09006f
 			public const int default_activity_button = 2131296367;
+			
+			// aapt resource value: 0x7f0900be
+			public const int deleteButton = 2131296446;
 			
 			// aapt resource value: 0x7f09009f
 			public const int design_bottom_sheet = 2131296415;
@@ -6962,14 +6968,14 @@ namespace Product.UICross.droid
 			// aapt resource value: 0x7f090070
 			public const int list_item = 2131296368;
 			
-			// aapt resource value: 0x7f0900c1
-			public const int masked = 2131296449;
+			// aapt resource value: 0x7f0900c4
+			public const int masked = 2131296452;
 			
 			// aapt resource value: 0x7f0900ae
 			public const int media_actions = 2131296430;
 			
-			// aapt resource value: 0x7f0900bf
-			public const int message = 2131296447;
+			// aapt resource value: 0x7f0900c2
+			public const int message = 2131296450;
 			
 			// aapt resource value: 0x7f090033
 			public const int middle = 2131296307;
@@ -6980,8 +6986,8 @@ namespace Product.UICross.droid
 			// aapt resource value: 0x7f09002a
 			public const int multiply = 2131296298;
 			
-			// aapt resource value: 0x7f0900bc
-			public const int nameTextView = 2131296444;
+			// aapt resource value: 0x7f0900bf
+			public const int nameTextView = 2131296447;
 			
 			// aapt resource value: 0x7f0900a2
 			public const int navigation_header_container = 2131296418;
@@ -7025,8 +7031,8 @@ namespace Product.UICross.droid
 			// aapt resource value: 0x7f09004f
 			public const int pin = 2131296335;
 			
-			// aapt resource value: 0x7f0900bd
-			public const int priceTextView = 2131296445;
+			// aapt resource value: 0x7f0900c0
+			public const int priceTextView = 2131296448;
 			
 			// aapt resource value: 0x7f0900bb
 			public const int productImageView = 2131296443;
@@ -7208,8 +7214,8 @@ namespace Product.UICross.droid
 			// aapt resource value: 0x7f09007e
 			public const int title_template = 2131296382;
 			
-			// aapt resource value: 0x7f0900be
-			public const int toolbar_cross = 2131296446;
+			// aapt resource value: 0x7f0900c1
+			public const int toolbar_cross = 2131296449;
 			
 			// aapt resource value: 0x7f090040
 			public const int top = 2131296320;
@@ -7241,14 +7247,17 @@ namespace Product.UICross.droid
 			// aapt resource value: 0x7f090009
 			public const int up = 2131296265;
 			
+			// aapt resource value: 0x7f0900bd
+			public const int updateButton = 2131296445;
+			
 			// aapt resource value: 0x7f090028
 			public const int useLogo = 2131296296;
 			
 			// aapt resource value: 0x7f090016
 			public const int view_offset_helper = 2131296278;
 			
-			// aapt resource value: 0x7f0900c0
-			public const int visible = 2131296448;
+			// aapt resource value: 0x7f0900c3
+			public const int visible = 2131296451;
 			
 			// aapt resource value: 0x7f09003e
 			public const int withText = 2131296318;
@@ -7487,28 +7496,31 @@ namespace Product.UICross.droid
 			public const int notification_template_part_time = 2130968632;
 			
 			// aapt resource value: 0x7f040039
-			public const int ProductRow = 2130968633;
+			public const int ProductDetailPage = 2130968633;
 			
 			// aapt resource value: 0x7f04003a
-			public const int ProductsPage = 2130968634;
+			public const int ProductRow = 2130968634;
 			
 			// aapt resource value: 0x7f04003b
-			public const int select_dialog_item_material = 2130968635;
+			public const int ProductsPage = 2130968635;
 			
 			// aapt resource value: 0x7f04003c
-			public const int select_dialog_multichoice_material = 2130968636;
+			public const int select_dialog_item_material = 2130968636;
 			
 			// aapt resource value: 0x7f04003d
-			public const int select_dialog_singlechoice_material = 2130968637;
+			public const int select_dialog_multichoice_material = 2130968637;
 			
 			// aapt resource value: 0x7f04003e
-			public const int SplashPage = 2130968638;
+			public const int select_dialog_singlechoice_material = 2130968638;
 			
 			// aapt resource value: 0x7f04003f
-			public const int support_simple_spinner_dropdown_item = 2130968639;
+			public const int SplashPage = 2130968639;
 			
 			// aapt resource value: 0x7f040040
-			public const int tooltip = 2130968640;
+			public const int support_simple_spinner_dropdown_item = 2130968640;
+			
+			// aapt resource value: 0x7f040041
+			public const int tooltip = 2130968641;
 			
 			static Layout()
 			{

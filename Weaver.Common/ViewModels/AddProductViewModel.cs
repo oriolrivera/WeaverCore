@@ -87,7 +87,7 @@
             };
 
 
-            var response = await this.apiService.PostAsync("/Products", product);
+            var response = await this.apiService.PostAsync("Products", product);
 
             this.IsLoading = false;
 

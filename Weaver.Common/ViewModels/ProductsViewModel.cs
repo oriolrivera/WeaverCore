@@ -18,6 +18,7 @@
         private readonly IDialogService dialogService;
         private readonly IMvxNavigationService navigationService;
         private MvxCommand addProductCommand;
+        private MvxCommand<Product> itemClickCommand;
 
         public ProductsViewModel(
             IApiService apiService,
@@ -44,6 +45,15 @@
             }
         }
 
+        public ICommand ItemClickCommand
+        {
+            get
+            {
+                this.itemClickCommand = new MvxCommand<Product>(this.OnItemClickCommand);
+                return itemClickCommand;
+            }
+        }
+
         private async void AddProduct()
         {
             await this.navigationService.Navigate<AddProductViewModel>();
@@ -55,10 +65,16 @@
             this.LoadProducts();
         }
 
+        private async void OnItemClickCommand(Product product)
+        {
+            await this.navigationService.Navigate<ProductsDetailViewModel, NavigationArgs>(
+                new NavigationArgs { Product = product });
+        }
+
         private async void LoadProducts()
         {
             
-            var response = await this.apiService.GetListAsync<Product>("/Products");
+            var response = await this.apiService.GetListAsync<Product>("Products");
 
             if (!response.IsSuccess)
             {

@@ -4,10 +4,10 @@
     using System;
     using System.Collections.Generic;
     using System.Net.Http;
-    using System.Net.Http.Headers;
     using System.Text;
     using System.Threading.Tasks;
-    using Weaver.Common.Models;
+    using Common.Helpers;
+    using Common.Models;
 
     public class ApiService : IApiService
     {  
@@ -15,13 +15,8 @@
         {
             try
             {
-                var client = new HttpClient
-                {
-                    BaseAddress = new Uri("url")
-                };
-
-                var url = $"{"/api"}{path}";
-                var response = await client.GetAsync(url);
+                HttpClient client = Settings.BaseHttpClient();
+                var response = await client.GetAsync(Settings.GetPath(path));
                 var result = await response.Content.ReadAsStringAsync();
 
                 if (!response.IsSuccessStatusCode)
@@ -56,13 +51,9 @@
             {
                 var request = JsonConvert.SerializeObject(model);
                 var content = new StringContent(request, Encoding.UTF8, "application/json");
-                var client = new HttpClient
-                {
-                    BaseAddress = new Uri("url")
-                };
 
-                var url = $"{"/api"}{path}";
-                var response = await client.PostAsync(url, content);
+                HttpClient client = Settings.BaseHttpClient();
+                var response = await client.PostAsync(Settings.GetPath(path), content);
                 var answer = await response.Content.ReadAsStringAsync();
                 if (!response.IsSuccessStatusCode)
                 {
@@ -78,6 +69,73 @@
                 {
                     IsSuccess = true,
                     Result = obj,
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+        public async Task<Response> PutAsync<T>(string path, int id, T model)
+        {
+            try
+            {
+                var request = JsonConvert.SerializeObject(model);
+                var content = new StringContent(request, Encoding.UTF8, "application/json");
+                HttpClient client = Settings.BaseHttpClient();
+
+                var response = await client.PutAsync(Settings.GetPath(path, id), content);
+                var answer = await response.Content.ReadAsStringAsync();
+                if (!response.IsSuccessStatusCode)
+                {
+                    return new Response
+                    {
+                        IsSuccess = false,
+                        Message = answer,
+                    };
+                }
+
+                var obj = JsonConvert.DeserializeObject<T>(answer);
+                return new Response
+                {
+                    IsSuccess = true,
+                    Result = obj,
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+        public async Task<Response> DeleteAsync(string path, int id)
+        {
+            try
+            {
+                HttpClient client = Settings.BaseHttpClient();
+                var response = await client.DeleteAsync(Settings.GetPath(path, id));
+                var answer = await response.Content.ReadAsStringAsync();
+                if (!response.IsSuccessStatusCode)
+                {
+                    return new Response
+                    {
+                        IsSuccess = false,
+                        Message = answer,
+                    };
+                }
+
+                return new Response
+                {
+                    IsSuccess = true
                 };
             }
             catch (Exception ex)
