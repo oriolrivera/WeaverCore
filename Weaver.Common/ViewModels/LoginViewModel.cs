@@ -71,11 +71,11 @@
                 return;
             }  */
 
-            if (!this.networkProvider.IsConnectedToWifi())
+            /*if (!this.networkProvider.IsConnectedToWifi())
             {
                 this.dialogService.Alert("Error", "The App requiered a internet connection, please check and try again.", "Accept");
                 return;
-            }
+            }   */
 
             this.IsLoading = true;          
             // TODO: request login
