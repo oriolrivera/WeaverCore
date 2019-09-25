@@ -5,7 +5,7 @@
 
     public class Settings
     {
-        public const string UrlService = "url";
+        public const string UrlService = "http://192.168.1.15:5001";
         public const string servicePrefix = "/api/";
 
         public static HttpClient BaseHttpClient()

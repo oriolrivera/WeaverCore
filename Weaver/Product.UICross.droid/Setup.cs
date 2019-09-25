@@ -13,9 +13,11 @@
     {
         protected override void InitializeFirstChance()
         {
-            Mvx.IoCProvider.RegisterType<IDialogService, DialogService>();
+            Mvx.LazyConstructAndRegisterSingleton<INetworkProvider, NetworkProvider>();
+            Mvx.IoCProvider.RegisterType<IDialogService, DialogService>();                        
 
             base.InitializeFirstChance();
+           
         }
 
         public override IEnumerable<Assembly> GetPluginAssemblies()

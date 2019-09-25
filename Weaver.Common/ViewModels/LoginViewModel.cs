@@ -16,6 +16,7 @@
         private readonly IDialogService dialogService;
         private bool isLoading;
         private readonly IMvxNavigationService navigationService;
+        private readonly INetworkProvider networkProvider;
 
         public bool IsLoading
         {
@@ -47,10 +48,12 @@
         public LoginViewModel(
             IApiService apiService,
             IDialogService dialogService,
-            IMvxNavigationService navigationService)
+            IMvxNavigationService navigationService,
+            INetworkProvider networkProvider)
         {
             this.dialogService = dialogService;
             this.navigationService = navigationService;
+            this.networkProvider = networkProvider;
             this.IsLoading = false;
         }
 
@@ -67,6 +70,12 @@
                 this.dialogService.Alert("Error", "You must enter a password.", "Accept");
                 return;
             }  */
+
+            if (!this.networkProvider.IsConnectedToWifi())
+            {
+                this.dialogService.Alert("Error", "The App requiered a internet connection, please check and try again.", "Accept");
+                return;
+            }
 
             this.IsLoading = true;          
             // TODO: request login

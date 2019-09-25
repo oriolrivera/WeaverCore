@@ -59,9 +59,19 @@
             }
         }
 
-        private async void Delete()
+        private void Delete()
         {
-            //TODO: Ask for confirmation
+            this.dialogService.Confirm(
+                "Confirm",
+                "This action can't be undone, are you sure to delete the product?",
+                "Yes",
+                "No",
+                () => { this.ConfirmDelete(); },
+                null);
+        }
+
+        private async void ConfirmDelete()
+        {
             this.IsLoading = true;
     
             var response = await this.apiService.DeleteAsync("Products", product.Id);
